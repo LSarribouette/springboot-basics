@@ -2,32 +2,55 @@
 <html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/whale-movie-favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
     <title>Films</title>
 </head>
 <body>
     <header>
-        <h1><a href="/">Hello Spring Web</a></h1>
-        <nav>
-            <a href="/movies">Liste des films</a></nav>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <img src="/whale-movie-logo.png" alt="Un beau logo avec une baleine-film (oui, c'est abstrait)">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="myNavbar">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="myNavbar" class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary" href="/movies">Liste des films</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
-        <h1>La liste des films</h1>
-        <table>
-            <tr>
-                <th>Genre</th>
-                <th>Année</th>
-                <th>Titre</th>
-                <th>Réalisateur</th>
-                <th>Action</th>
-            </tr>
-            <tr th:each="movie : ${list}">
-                <td th:text="${movie.genre.label}"></td>
-                <td th:text="${movie.year}"></td>
-                <td th:text="${movie.title}"></td>
-                <td th:text="${movie.director.firstName + ' ' + movie.director.lastName}"></td>
-                <td><a th:href="@{/detail/__${movie.id}__}">Détail</a></td>
-            </tr>
-        </table>
+        <section class="section">
+            <h1 class="title">La liste des films</h1>
+            <table>
+                <tr>
+                    <th>Genre</th>
+                    <th>Année</th>
+                    <th>Titre</th>
+                    <th>Réalisateur</th>
+                    <th>Action</th>
+                </tr>
+                <tr th:each="movie : ${list}">
+                    <td th:text="${movie.genre.label}"></td>
+                    <td th:text="${movie.year}"></td>
+                    <td th:text="${movie.title}"></td>
+                    <td th:text="${movie.director.firstName + ' ' + movie.director.lastName}"></td>
+                    <td><a th:href="@{/detail/__${movie.id}__}">Détail</a></td>
+                </tr>
+            </table>
+        </section>
     </main>
 </body>
 </html>

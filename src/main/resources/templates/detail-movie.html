@@ -1,43 +1,66 @@
 <!DOCTYPE html>
 <html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Détail</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/whale-movie-favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title>Détail</title>
 </head>
 <body>
-  <header>
-    <h1><a href="/">Hello Spring Web</a></h1>
-    <nav>
-      <a href="/movies">Liste des films</a></nav>
-  </header>
-  <main>
-    <h1>Détail du film</h1>
-    <form action="" th:object="${mymovie}">
-      <label for="genre">Genre : </label><br>
-      <input type="text" id="genre" name="genre" th:value="*{genre.label}"><br>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <img src="/whale-movie-logo.png" alt="Un beau logo avec une baleine-film (oui, c'est abstrait)">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="myNavbar">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="myNavbar" class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary" href="/movies">Liste des films</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="section">
+            <h1 class="title">Détail du film</h1>
+            <form action="" th:object="${mymovie}">
+                <label for="genre">Genre : </label><br>
+                <input type="text" id="genre" name="genre" th:value="*{genre.label}"><br>
 
-      <label for="year">Année :</label><br>
-      <input type="text" id="year" name="year" th:value="*{year}"><br>
+                <label for="year">Année :</label><br>
+                <input type="text" id="year" name="year" th:value="*{year}"><br>
 
-      <label for="title">Titre :</label><br>
-      <input type="text" id="title" name="title" th:value="*{title}"><br>
+                <label for="title">Titre :</label><br>
+                <input type="text" id="title" name="title" th:value="*{title}"><br>
 
-      <label for="director">Réalisateur.e :</label><br>
-      <input type="text" id="director" name="director" th:value="*{director.firstName + ' ' + director.lastName}"><br>
+                <label for="director">Réalisateur.e :</label><br>
+                <input type="text" id="director" name="director" th:value="*{director.firstName + ' ' + director.lastName}"><br>
 
-      <label for="duration">Durée :</label><br>
-      <input type="text" id="duration" name="duration" th:value="*{duration}"><br>
+                <label for="duration">Durée :</label><br>
+                <input type="text" id="duration" name="duration" th:value="*{duration}"><br>
 
-      <label for="actors">Acteur.e.(s) :</label><br>
-      <select multiple id="actors">
-        <option th:each="actor : *{actors}" th:text="${' - ' + actor.firstName + ' ' + actor.lastName}"></option>
-      </select><br>
+                <label for="actors">Acteur.e.(s) :</label><br>
+                <select multiple id="actors">
+                    <option th:each="actor : *{actors}" th:text="${' - ' + actor.firstName + ' ' + actor.lastName}"></option>
+                </select><br>
 
-      <label for="synopsis">Synopsis :</label><br>
-      <input type="text" id="synopsis" name="synopsis" th:value="*{synopsis}"><br>
+                <label for="synopsis">Synopsis :</label><br>
+                <input type="text" id="synopsis" name="synopsis" th:value="*{synopsis}"><br>
 
-      <input type="submit" value="OK"><br>
-    </form>
-  </main>
+                <input type="submit" value="OK"><br>
+            </form>
+        </section>
+    </main>
 </body>
 </html>

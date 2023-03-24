@@ -2,17 +2,39 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/whale-movie-favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
     <title>Accueil</title>
 </head>
 <body>
     <header>
-        <h1><a href="/">Hello Spring Web</a></h1>
-        <nav>
-            <a href="/movies">Liste des films</a></nav>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <img src="/whale-movie-logo.png" alt="Un beau logo avec une baleine-film (oui, c'est abstrait)">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="myNavbar">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="myNavbar" class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary" href="/movies">Liste des films</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
-        <h1>Une bibliothèque de films</h1>
+        <section class="section">
+            <h1 class="title">Une bibliothèque de films</h1>
+        </section>
     </main>
 </body>
 </html>

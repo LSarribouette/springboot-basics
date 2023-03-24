@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Films</title>
+</head>
+<body>
+    <header>
+        <h1><a href="/">Hello Spring Web</a></h1>
+        <nav>
+            <a href="/movies">Liste des films</a></nav>
+    </header>
+    <main>
+        <h1>La liste des films</h1>
+        <table>
+            <tr>
+                <th>Genre</th>
+                <th>Année</th>
+                <th>Titre</th>
+                <th>Réalisateur</th>
+                <th>Action</th>
+            </tr>
+            <tr th:each="movie : ${list}">
+                <td th:text="${movie.genre.label}"></td>
+                <td th:text="${movie.year}"></td>
+                <td th:text="${movie.title}"></td>
+                <td th:text="${movie.director.firstName + ' ' + movie.director.lastName}"></td>
+                <td><a th:href="@{/detail/__${movie.id}__}">Détail</a></td>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>

@@ -28,7 +28,7 @@ public class Movie {
         this.duration = duration;
         this.synopsis = synopsis;
         this.director = director;
-        // setActors(null); pas besoin, j'appelle le constructeur vide
+        setActors(actors);
         this.genre = genre;
     }
 
@@ -98,5 +98,19 @@ public class Movie {
 
     public void setGenre(Genre genre) {
         this.genre = genre;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", year=" + year +
+                ", duration=" + duration +
+                ", synopsis='" + synopsis + '\'' +
+                ", director=" + director +
+                ", actors=" + actors +
+                ", genre=" + genre +
+                '}';
     }
 }

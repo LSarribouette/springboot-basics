@@ -11,17 +11,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 import java.util.Optional;
 
-@Controller("movieBean")
+@Controller
 public class MovieController {
 
     private MovieService movieService;
 
-    @Autowired // optionnel
+    @Autowired // optionnel en Spring Boot
     public MovieController(MovieService movieService) {
         this.movieService = movieService;
     }
 
-    // Methodes pour les mappings
     @GetMapping("/")
     public String goHome() {
         return "home";

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="/whale-movie-favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="/style.css">
+    <script src="/menu-burger.js"></script>
     <title>Détail</title>
 </head>
 <body>
@@ -35,30 +36,63 @@
         <section class="section">
             <h1 class="title">Détail du film</h1>
             <form action="" th:object="${mymovie}">
-                <label for="genre">Genre : </label><br>
-                <input type="text" id="genre" name="genre" th:value="*{genre.label}"><br>
 
-                <label for="year">Année :</label><br>
-                <input type="text" id="year" name="year" th:value="*{year}"><br>
+                <div class="field">
+                    <label for="genre" class="label">Genre : </label>
+                    <div class="control">
+                        <input class="input" type="text" id="genre" name="genre" th:value="*{genre.label}">
+                    </div>
+                </div>
 
-                <label for="title">Titre :</label><br>
-                <input type="text" id="title" name="title" th:value="*{title}"><br>
+                <div class="field">
+                    <label for="year" class="label">Année : </label>
+                    <div class="control">
+                        <input class="input" type="text" id="year" name="year" th:value="*{year}">
+                    </div>
+                </div>
 
-                <label for="director">Réalisateur.e :</label><br>
-                <input type="text" id="director" name="director" th:value="*{director.firstName + ' ' + director.lastName}"><br>
+                <div class="field">
+                    <label for="title" class="label">Titre : </label>
+                    <div class="control">
+                        <input class="input" type="text" id="title" name="title" th:value="*{title}">
+                    </div>
+                </div>
 
-                <label for="duration">Durée :</label><br>
-                <input type="text" id="duration" name="duration" th:value="*{duration}"><br>
+                <div class="field">
+                    <label for="director" class="label">Réalisateur.e : </label>
+                    <div class="control">
+                        <input class="input" type="text" id="director" name="director" th:value="*{director.firstName + ' ' + director.lastName}">
+                    </div>
+                </div>
 
-                <label for="actors">Acteur.e.(s) :</label><br>
-                <select multiple id="actors">
-                    <option th:each="actor : *{actors}" th:text="${' - ' + actor.firstName + ' ' + actor.lastName}"></option>
-                </select><br>
+                <div class="field">
+                    <label for="duration" class="label">Durée :</label>
+                    <div class="control">
+                        <input class="input" type="text" id="duration" name="duration" th:value="*{duration}">
+                    </div>
+                </div>
 
-                <label for="synopsis">Synopsis :</label><br>
-                <input type="text" id="synopsis" name="synopsis" th:value="*{synopsis}"><br>
+                <div class="field">
+                    <label for="actors" class="label">Acteur.e.(s) :</label>
+                    <div class="select is-multiple">
+                        <select multiple id="actors">
+                            <option class="option" th:each="actor : *{actors}" th:text="${' - ' + actor.firstName + ' ' + actor.lastName}"></option>
+                        </select>
+                    </div>
+                </div>
 
-                <input type="submit" value="OK"><br>
+                <div class="field">
+                    <label for="synopsis" class="label">Synopsis :</label>
+                    <div class="control">
+                        <input class="input" type="text" id="synopsis" name="synopsis" th:value="*{synopsis}">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <input class="button is-link" type="submit" value="OK"><br>
+                    </div>
+                </div>
             </form>
         </section>
     </main>

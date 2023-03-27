@@ -1,0 +1,53 @@
+<header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/whale-movie-logo.png" alt="Un beau logo avec une baleine-film (oui, c'est abstrait)">
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="myNavbar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="myNavbar" class="navbar-menu">
+      <div class="nav-start">
+        <div class="navbar-item is-">
+          Bienvenue
+          <span th:if="${session.userSession}"
+                th:text="${' ['+ session.userSession.get().firstName+']'}">
+          </span>
+        </div>
+      </div>
+      <div class="navbar-end">
+        <a class="navbar-item" href="/movies">Liste des films</a>
+        <div class="navbar-item">
+          <div class="buttons">
+            <div th:if="${session.userSession}">
+              <a class="button is-warning" href="/logout">Déconnexion</a>
+            </div>
+            <div th:unless="${session.userSession}">
+              <a class="button is-primary" href="/login">Connexion</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<!--<header>-->
+<!--  <h1 id="nav-title">-->
+<!--    <a href="/">Filmothèque</a>-->
+<!--    <span th:if="${session.userSession != null}"-->
+<!--          th:text="${'['+ session.userSession.firstName+']'}"></span>-->
+<!--  </h1>-->
+<!--  <nav>-->
+<!--    <ul>-->
+<!--      <li><a href="/movies">Films</a></li>-->
+<!--      <li th:if="${session.userSession == null}"><a href="/login">Connexion</a></li>-->
+<!--      <li th:unless="${session.userSession == null}"><a href="/logout">Déconnexion</a></li>-->
+<!--    </ul>-->
+<!--  </nav>-->
+<!--</header>-->

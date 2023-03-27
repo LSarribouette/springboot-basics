@@ -9,34 +9,30 @@
     <title>Se connecter</title>
 </head>
 <body>
-<header>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-                <img src="/whale-movie-logo.png" alt="Un beau logo avec une baleine-film (oui, c'est abstrait)">
-            </a>
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="myNavbar">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-        <div id="myNavbar" class="navbar-menu">
-            <div class="navbar-end">
-                <a class="navbar-item" href="/movies">Liste des films</a>
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-primary" href="/login">Connexion</a>
+    <div th:replace="/fragments/header"></div>
+    <main>
+        <section class="section">
+            <h1 class="title">Se connecter</h1>
+            <form action="/login" method="post">
+                <div class="field">
+                    <label for="inputLogin">Pseudo : </label>
+                    <div class="control">
+                        <input required type="text" id="inputLogin" name="email">
                     </div>
                 </div>
-            </div>
-        </div>
-    </nav>
-</header>
-<main>
-    <section class="section">
-        <h1 class="title">Se connecter</h1>
-    </section>
-</main>
+                <div class="field">
+                    <label for="inputPwd">Mot de Passe : </label>
+                    <div>
+                        <input required type="password" id="inputPwd" name="password">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input class="button is-link" type="submit" value="OK">
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
 </body>
 </html>

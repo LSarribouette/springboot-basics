@@ -21,11 +21,6 @@ public class MovieController {
         this.movieService = movieService;
     }
 
-    @GetMapping("/")
-    public String goHome() {
-        return "home";
-    }
-
     @GetMapping("/movies")
     public String goListMovies(Model model) {
         model.addAttribute("list", movieService.getAllMovies());

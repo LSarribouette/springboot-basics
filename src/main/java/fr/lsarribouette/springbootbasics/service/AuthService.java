@@ -11,4 +11,6 @@ public interface AuthService {
     public abstract List<Member> getAllMembers();
 
     public abstract Member getMemberById(long id);
+
+    Optional<Member> toLogin(String email, String password);
 }

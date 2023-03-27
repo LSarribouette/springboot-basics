@@ -9,30 +9,7 @@
     <title>Détail</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="/">
-                    <img src="/whale-movie-logo.png" alt="Un beau logo avec une baleine-film (oui, c'est abstrait)">
-                </a>
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="myNavbar">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-            <div id="myNavbar" class="navbar-menu">
-                <div class="navbar-end">
-                    <a class="navbar-item" href="/movies">Liste des films</a>
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button is-primary" href="/login">Connexion</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div th:replace="/fragments/header"></div>
     <main>
         <section class="section">
             <h1 class="title">Détail du film</h1>
@@ -91,7 +68,7 @@
 
                 <div class="field">
                     <div class="control">
-                        <input class="button is-link" type="submit" value="OK"><br>
+                        <input class="button is-link" type="submit" value="OK">
                     </div>
                 </div>
             </form>

@@ -13,12 +13,12 @@ public class Member {
 
     /**
      * Constructeur de Member avec tous les paramètres.
-     * @param id
-     * @param lastName
-     * @param firstName
-     * @param login
-     * @param password
-     * @param isAdmin
+     * @param id identifiant unique
+     * @param lastName nom de famille
+     * @param firstName prénom
+     * @param login identifiant de connexion
+     * @param password mot de passe
+     * @param isAdmin administrateur.e ou non
      */
     public Member(long id, String lastName, String firstName, String login, String password, boolean isAdmin) {
         this.id = id;
